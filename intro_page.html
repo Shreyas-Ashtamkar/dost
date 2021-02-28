@@ -41,9 +41,52 @@
             box-shadow: aqua;
         }
 
+        input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+
+        input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+        background-color: #45a049;
+        }
+
+        div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        }
     </style>
 </head>
 <body>
+    <div>
+        <form action="http://127.0.0.1:5000/sms" method="post">
+            <input type="text" placeholder="To   -> whatsapp:+14155238886" name="To"/>
+            <input type="text" placeholder="Body -> help" name="Body"/>
+            <input type="text" placeholder="From -> whatsapp:+917798044008" name="From"/>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+    <hr>
+    <div>
+        <span> Try the Whatsapp Bot. </span>
+    </div>
+    
     <a class="button" href="whatsapp://send?phone=<+1 415 523 8886>&text=join teacher-spite" role="button">Join</a>
 </body>
 </html>

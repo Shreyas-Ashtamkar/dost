@@ -1,24 +1,38 @@
 from flask import Flask,request
 from twilio.twiml.messaging_response import MessagingResponse
 
-from messages import Main_Menu, Error_Reply, intro_page
+from messages import shortMenu, MainMenu, ErrorReply, introPage, n
 from wiki import wiki
 from covid import covid
-from video import video
+from video import video, download_video
+from sender import sendMessage
+from lyrics import getLyrics
+from news import news
+
+from time import sleep
 
 def menu(nothing:str=''):
-    return Main_Menu
+    return shortMenu
+
+def longMenu(nothing:str=''):
+    return MainMenu
 
 def error(nothing:str=''):
-    return Error_Reply
+    return ErrorReply
+
+
 
 validInputs = {
     "help":menu,
     "info":menu,
+    "help-all":longMenu,
     "wiki":wiki,
     "video":video,
     "covid":covid,
+    "news":news,
     "youtube":video,
+    "dvideo":download_video,
+    "lyrics":getLyrics,
     "error":error
 }
 
@@ -32,12 +46,12 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return intro_page
+    return introPage
 
 @app.route("/sms", methods=['POST'])
 def main():
-    print(request.form)
-    msg = request.form.get('Body').lower().split()
+    From    = request.form.get('From')[9:]
+    msg     = request.form.get('Body').lower().split()
 
     if len(msg) == 1:
         arg = ''
@@ -53,10 +67,15 @@ def main():
     else:
         msg = validInputs["error"]()
 
-    resp = MessagingResponse()
-    resp.message(msg)
 
-    return str(resp)
+    if isinstance(msg, list):
+        msg = "\n\n".join(msg)
+
+    msg += "\n\nType help for more options."
+
+    sendMessage(clientPhoneNo=From, msg=msg)
+
+    return str(msg)
 
 ################################################################################
 ################################################################################

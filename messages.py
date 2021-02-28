@@ -1,28 +1,59 @@
-Main_Menu = """
-This is a Whatsapp Chatbot, Built by Space-For-Inception . The services I can offer are :- 
+shortMenu = """
+This is a Whatsapp Chatbot, Built by Space-For-Inception.
+These are the following services I can offer: 
+1. Wikipedia     wiki   <thing>
+2. Covid-19      covid  <Country>
+3. Youtube       video  <thing>
+4. DownVideo     dvideo <thing>
+5. Lyrics        lyrics <song>
+6. News          news
+
+For Detailed Explaination, send help-all
+"""
+
+MainMenu = """
+This is a Whatsapp Chatbot, Built by Space-For-Inception.
 These are the following services I can offer.: 
 1. *Wikipedia* -- 
-    Get the wikipedia Info.
+    Get the wikipedia Info of Something.
     
-    _example : 
-        wiki India_
+    example : 
+        wiki India
         
 2. *Covid-19* -- 
-    Get current numbers of Covid-19 situation of specific country.
+    Get Covid-19 Live Numebrs some country.
     
-    _example : 
+    example : 
         covid India
         
 3. *Youtube Video* -- 
-    Search a video for what you wish to do
+    Responds you with the most Relevent 3 Videos.
     
-    _example : 
-        youtube Tom and Jerry_
+    example : 
+        youtube Tom and Jerry
+        
+4. *Download Youtube Video* -- 
+    Responds you with the download link to most Relevent 3 Videos.
+    
+    example : 
+        dvideo Tom and Jerry
+
+5. *Lyrics of Song* -- 
+    Get the Lyrics of your Favourite Song.
+    
+    example : 
+        lyrics Vande Mataram
+
+6. *Latest News* -- 
+    Get the Latest.
+    
+    example : 
+        news
 """
 
-Error_Reply = "Invalid Option. please type *info or *help for help."
+ErrorReply = "Invalid Option. please type 'info' or 'help' for help."
 
-intro_page = """
+introPage = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,4 +103,8 @@ intro_page = """
     <a class="button" href="whatsapp://send?phone=<+1 415 523 8886>&text=join teacher-spite" role="button">Join</a>
 </body>
 </html>
+"""
+
+n = """
+
 """
