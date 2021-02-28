@@ -1,17 +1,17 @@
 # DOST
-> Q. What is it ? 
+### Q. What is it ? 
 >> Whatsapp Bot
 
-> Q. Which is the Dominant Language used in this ?
+### Q. Which is the Dominant Language used in this ?
 >> Python 3
 
-> Q. Technological Stack ?
+### Q. Technological Stack ?
 >> + Language   --> Python 3
 >> + Framework  --> Flask
 >> + Deployment --> Heroku (Free Plan)
 >> + Whatsapp   --> Twillio (Free Plan)
 
-> Q. What does it do ?
+### Q. What does it do ?
 >> 1. Shows a Menu of all that it is capable of doing.
 >> 2. Accepts menu options and arguments
 >> 3. Processes requested operation (acc. to option)
